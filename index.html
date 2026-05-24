@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adam Freides | Freelance PPC & Digital Marketing</title>
+    <title>AF Digital Consulting | Advanced PPC & Performance Architecture</title>
     
     <meta name="robots" content="noindex, nofollow">
     
     <style>
         :root {
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --accent: #0f172a;
-            --border: #e2e8f0;
+            --bg: #090d16;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --border: rgba(255, 255, 255, 0.08);
+            --accent: #38bdf8;
+            --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(129, 140, 248, 0.03) 0%, transparent 40%);
             color: var(--text-main);
             line-height: 1.6;
             margin: 0;
@@ -27,82 +31,155 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            align-items: center;
+            justify-content: center;
         }
 
-        .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 40px 20px;
+        .wrapper {
+            max-width: 750px;
             width: 100%;
+            padding: 40px 20px;
             box-sizing: border-box;
         }
 
-        main {
-            background: var(--card-bg);
-            padding: 40px;
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-mark {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-gradient);
             border-radius: 12px;
-            border: 1px solid var(--border);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin: 0 auto 16px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #090d16;
+            font-size: 18px;
+            letter-spacing: -0.5px;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
         }
 
         h1 {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--accent);
-            margin-top: 0;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
+            font-size: 32px;
+            font-weight: 800;
+            margin: 0 0 8px 0;
+            letter-spacing: -1px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .title-tag {
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-        }
-
-        p {
+        .subtitle {
             font-size: 16px;
-            color: var(--text-main);
-            margin-bottom: 20px;
+            color: var(--text-muted);
+            font-weight: 400;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
-        .services-list {
-            margin: 24px 0;
-            padding-left: 20px;
-            color: var(--text-main);
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 32px;
         }
 
-        .services-list li {
-            margin-bottom: 10px;
-            font-size: 15px;
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 24px;
+            border-radius: 16px;
+            backdrop-filter: blur(12px);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .card h3 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card h3::before {
+            content: "//";
+            color: var(--accent);
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .status-banner {
+            background: rgba(56, 189, 248, 0.05);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
         }
 
         footer {
-            margin-top: 30px;
             text-align: center;
-            font-size: 13px;
-        }
-
-        a {
+            font-size: 12px;
             color: var(--text-muted);
-            text-decoration: underline;
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--text-muted);
             cursor: pointer;
+            transition: color 0.2s;
         }
 
-        a:hover {
+        footer a:hover {
             color: var(--accent);
+            border-bottom-color: var(--accent);
         }
 
-        /* Privacy Policy Modal styling */
+        /* Privacy Policy Modal Window */
         .modal {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(4px);
+            background: rgba(5, 8, 15, 0.8);
+            backdrop-filter: blur(8px);
             justify-content: center;
             align-items: center;
             padding: 20px;
@@ -111,58 +188,85 @@
         }
 
         .modal-content {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
+            background: #111827;
+            border: 1px solid var(--border);
+            padding: 32px;
+            border-radius: 20px;
             max-width: 550px;
             max-height: 70vh;
             overflow-y: auto;
-            border: 1px solid var(--border);
             position: relative;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+            color: var(--text-main);
+            font-size: 20px;
+            letter-spacing: -0.5px;
         }
 
         .close-btn {
-            float: right;
-            font-weight: bold;
-            font-size: 20px;
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 24px;
             color: var(--text-muted);
-            text-decoration: none;
             cursor: pointer;
+            transition: color 0.2s;
         }
+
+        .close-btn:hover { color: var(--text-main); }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <main>
-        <h1>Adam Freides</h1>
-        <div class="title-tag">Freelance PPC &amp; Digital Marketing</div>
+<div class="wrapper">
+    <header>
+        <div class="logo-mark">AF</div>
+        <h1>AF Digital Consulting</h1>
+        <div class="subtitle">Custom Performance Systems &amp; Technical Marketing Architecture</div>
+    </header>
+
+    <div class="status-banner">
+        <span class="status-indicator"></span>
+        <span>Currently optimized for secure local environment API pipeline reporting queries.</span>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Campaign Architecture</h3>
+            <p>Advanced algorithmic structure models deployed across major ad networks to capture maximum conversion intent data cleanly.</p>
+        </div>
         
-        <p>Providing independent, enterprise-grade campaign architecture optimization, account infrastructure audits, and private programmatic performance data automation monitoring.</p>
-        
-        <p>Specializing in secure data engineering integration configurations for dedicated client portfolio analysis.</p>
-        
-        <ul class="services-list">
-            <li>Google Ads &amp; Meta Ads Campaign Architecture</li>
-            <li>Custom Google Ads Query Language (GAQL) Reporting Pipelines</li>
-            <li>Budget Management &amp; Spend Anomaly Detection Scripts</li>
-            <li>Private Internal API Infrastructure Integrations</li>
-        </ul>
-    </main>
+        <div class="card">
+            <h3>Data Automation</h3>
+            <p>Engineered pipelines pulling raw metrics natively via specialized script handlers, removing the friction of manual report building.</p>
+        </div>
+
+        <div class="card">
+            <h3>Anomaly Audits</h3>
+            <p>Algorithmic threshold rules checking for runaway budgets, bidding discrepancies, and non-converting high-cost assets in real-time.</p>
+        </div>
+
+        <div class="card">
+            <h3>Private Operations</h3>
+            <p>Dedicated sole-proprietor infrastructure specialized in isolated, read-only account diagnostics for precise metric oversight.</p>
+        </div>
+    </div>
 
     <footer>
-        &copy; 2026 Adam Freides. All rights reserved. | <a onclick="toggleModal(true)">Privacy Policy</a>
+        &copy; 2026 AF Digital Consulting. All rights reserved. | <a onclick="toggleModal(true)">Privacy Architecture Protocol</a>
     </footer>
 </div>
 
 <div id="privacyModal" class="modal" onclick="toggleModal(false)">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="close-btn" onclick="toggleModal(false)">&times;</span>
-        <h2>Privacy Policy</h2>
-        <p><strong>Last Updated: May 2026</strong></p>
-        <p>This website serves strictly as an informational portfolio for the independent freelance consulting operations of Adam Freides. It does not actively solicit, capture, store, or process user tracking cookies, marketing analytics tracking tags, or personal consumer profile data metrics.</p>
-        <p><strong>Data Minimization:</strong> Any voluntary digital communication correspondence directed to domain-aligned inquiries is treated with strict internal data processing safeguards. No data processing metrics are shared, rented, or distributed to any third-party commercial databases.</p>
-        <p><strong>API Operations:</strong> All integrated programmatic interfaces managed via associated platform access architectures function entirely within localized environments using encrypted storage frameworks matching strict consumer data security guidelines.</p>
+        <h2>Privacy Architecture Protocol</h2>
+        <p style="font-size: 13px; color: var(--accent);">Effective: May 2026</p>
+        <p style="font-size: 14px; color: var(--text-muted);">This network node exists strictly as an administrative portfolio verifying technical API endpoints for independent consulting workflows managed by Adam Freides.</p>
+        <p style="font-size: 14px; color: var(--text-muted);"><strong>Data Isolation:</strong> This system does not host tracking tags, marketing conversion pixels, commercial cookies, or customer profile forms. Any data processing metrics pulled via external configurations function entirely within transient local script memory, strictly utilizing secure HTTPS layers.</p>
     </div>
 </div>
 
