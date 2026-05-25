@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adam Freides | Freelance Growth Marketer &amp; Paid Search Expert</title>
+    <title>Adam Freides | Freelance Growth Marketer &amp; Paid Search Specialist</title>
     
     <meta name="robots" content="noindex, nofollow">
     
@@ -16,6 +16,9 @@
             --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
             --text-main: #f1f5f9;
             --text-muted: #94a3b8;
+            --input-bg: rgba(15, 23, 42, 0.6);
+            --success: #10b981;
+            --error: #ef4444;
         }
 
         body {
@@ -90,7 +93,6 @@
             margin: 4px 0 8px 0;
         }
 
-        /* LinkedIn Button Styling */
         .linkedin-link {
             display: inline-flex;
             align-items: center;
@@ -143,7 +145,6 @@
             background: var(--border);
         }
 
-        /* Core Proficiencies Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -226,6 +227,97 @@
 
         .exp-details li {
             margin-bottom: 4px;
+        }
+
+        /* Modern Contact Form Styling */
+        .contact-form {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 32px;
+            border-radius: 16px;
+            backdrop-filter: blur(12px);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            background: var(--input-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: var(--text-main);
+            font-size: 14px;
+            box-sizing: border-box;
+            font-family: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.15);
+        }
+
+        .submit-btn {
+            background: var(--accent-gradient);
+            color: #090d16;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 24px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+
+        .submit-btn:hover { opacity: 0.95; }
+        .submit-btn:active { transform: scale(0.99); }
+        .submit-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+        /* Formspree Notification Feedback Blocks */
+        .fs-success-msg {
+            display: none;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success);
+            color: var(--success);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .fs-error-msg, .field-error {
+            color: var(--error);
+            font-size: 12px;
+            margin-top: 6px;
+            display: block;
+            font-weight: 500;
+        }
+        
+        .fs-error-msg {
+            background: rgba(239, 68, 116, 0.1);
+            border: 1px solid var(--error);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 14px;
         }
 
         .status-badge {
@@ -314,7 +406,7 @@
             </div>
             <div class="header-text">
                 <h1>Adam Freides</h1>
-                <div class="headline">Freelance Growth Marketer &amp; Paid Search Expert</div>
+                <div class="headline">Freelance Growth Marketer &amp; Paid Search Specialist</div>
                 <a href="https://www.linkedin.com/in/adam-freides/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
                     <svg class="linkedin-icon" viewBox="0 0 24 24">
                         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -366,7 +458,7 @@
                     <h3 class="role">Growth Marketer / Performance Marketing</h3>
                     <p class="company">Shopify</p>
                 </div>
-                <span class="duration">Present</span>
+                <span class="duration">Past</span>
             </div>
             <ul class="exp-details">
                 <li>Strategized global paid search initiatives focused on accelerating international merchant acquisition pipelines.</li>
@@ -412,20 +504,31 @@
                 <li>Managed elite-tier digital advertising portfolios, standardizing account structures and testing ad copy variants to capture premium traffic.</li>
             </ul>
         </div>
-
-        <div class="experience-card">
-            <div class="exp-header">
-                <div>
-                    <h3 class="role">Digital Advertising Specialist</h3>
-                    <p class="company">Agency 451</p>
-                </div>
-                <span class="duration">Past</span>
-            </div>
-            <ul class="exp-details">
-                <li>Monitored, executed, and structured technical search strategies while maintaining granular pacing and budget controls.</li>
-            </ul>
-        </div>
     </div>
+
+    <div class="section-title">Get In Touch</div>
+    
+    <div class="fs-success-msg" data-fs-success>Message sent! Thanks for reaching out, I'll be in touch shortly.</div>
+    <div class="fs-error-msg" data-fs-error></div>
+
+    <form id="contact-form" class="contact-form">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="John Doe" data-fs-field>
+            <span class="field-error" data-fs-error="name"></span>
+        </div>
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="john@example.com" data-fs-field>
+            <span class="field-error" data-fs-error="email"></span>
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="How can I help with your performance strategy?" data-fs-field></textarea>
+            <span class="field-error" data-fs-error="message"></span>
+        </div>
+        <button type="submit" class="submit-btn" data-fs-submit-btn>Send Message</button>
+    </form>
 
     <footer>
         &copy; 2026 Adam Freides. All rights reserved. | <a onclick="toggleModal(true)">Infrastructure Privacy Protocol</a>
@@ -438,15 +541,21 @@
         <h2>Infrastructure Privacy Protocol</h2>
         <p style="font-size: 13px; color: var(--accent);">Effective: May 2026</p>
         <p style="font-size: 14px; color: var(--text-muted);">This web node exists strictly as an administrative endpoint verifying programmatic API parameters for the independent consulting practices of Adam Freides.</p>
-        <p style="font-size: 14px; color: var(--text-muted);"><strong>Data Isolation:</strong> This environment does not host public conversion pixels, tracking cookies, or consumer profile forms. All active programmatic scripts execute entirely within secure, local-memory data structures via HTTPS transport layers.</p>
+        <p style="font-size: 14px; color: var(--text-muted);"><strong>Data Isolation:</strong> This environment does not host public conversion pixels, tracking cookies, or consumer profile forms. All submissions handled via integrated communication frames process securely via encrypted transport layers.</p>
     </div>
 </div>
 
 <script>
+    // Privacy Modal Toggle
     function toggleModal(show) {
         document.getElementById('privacyModal').style.display = show ? 'flex' : 'none';
     }
+
+    // Formspree Initialization Script Queue
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#contact-form', formId: 'xkoeqrvv' });
 </script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
