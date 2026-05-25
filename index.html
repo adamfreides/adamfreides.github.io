@@ -35,45 +35,45 @@
         }
 
         .wrapper {
-            max-width: 700px;
+            max-width: 720px;
             width: 100%;
             padding: 60px 20px;
             box-sizing: border-box;
         }
 
         header {
-            margin-bottom: 48px;
+            margin-bottom: 40px;
         }
 
         .profile-title {
             display: flex;
             align-items: center;
             gap: 20px;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
 
-        /* Upgraded Headshot Frame */
         .avatar-frame {
-            width: 70px;
-            height: 70px;
+            width: 76px;
+            height: 76px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2px; /* For the gradient border */
+            padding: 2px;
             background: var(--accent-gradient);
             box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
+            flex-shrink: 0;
         }
 
         .avatar-frame img {
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            object-fit: cover; /* Ensures image isn't stretched */
-            border: 2px solid #090d16; /* Background color separator */
+            object-fit: cover;
+            border: 2px solid #090d16;
         }
 
-        h1 {
+        .header-text h1 {
             font-size: 34px;
             font-weight: 800;
             margin: 0;
@@ -87,14 +87,41 @@
             font-size: 18px;
             color: var(--text-main);
             font-weight: 500;
-            margin: 4px 0 12px 0;
+            margin: 4px 0 8px 0;
+        }
+
+        /* LinkedIn Button Styling */
+        .linkedin-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .linkedin-link:hover {
+            background: rgba(56, 189, 248, 0.1);
+            border-color: rgba(56, 189, 248, 0.3);
+            color: var(--accent);
+        }
+
+        .linkedin-icon {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
         }
 
         .bio {
             font-size: 15px;
             color: var(--text-muted);
-            margin: 0;
-            max-width: 620px;
+            margin: 16px 0 0 0;
         }
 
         .section-title {
@@ -103,7 +130,7 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: var(--accent);
-            margin: 40px 0 16px 0;
+            margin: 44px 0 16px 0;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -114,6 +141,28 @@
             flex-grow: 1;
             height: 1px;
             background: var(--border);
+        }
+
+        /* Core Proficiencies Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 550px) {
+            .skills-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: var(--text-main);
+            text-align: center;
         }
 
         .timeline {
@@ -165,6 +214,7 @@
             padding: 2px 8px;
             border-radius: 6px;
             border: 1px solid var(--border);
+            flex-shrink: 0;
         }
 
         .exp-details {
@@ -262,13 +312,19 @@
             <div class="avatar-frame">
                 <img src="headshot.png" alt="Adam Freides">
             </div>
-            <div>
+            <div class="header-text">
                 <h1>Adam Freides</h1>
                 <div class="headline">Freelance Growth Marketer &amp; Paid Search Specialist</div>
+                <a href="https://www.linkedin.com/in/adam-freides/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                    <svg class="linkedin-icon" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    Connect on LinkedIn
+                </a>
             </div>
         </div>
         <p class="bio">
-            Leveraging a decade of performance marketing experience managing global client budgets, scaling e-commerce architectures, and building custom data automation utilities. Specializing in advanced Google Ads Query Language (GAQL) scripting and budget integrity auditing.
+            Performance marketing professional specializing in full-funnel customer acquisition, digital search architecture, and robust B2B demand generation strategy. Over a decade of experience scaling cross-channel budgets, refining conversion tracking, and deploying technical data automation solutions.
         </p>
     </header>
 
@@ -277,7 +333,17 @@
         <span>Independent contractor operations optimized for local API environment pipeline queries.</span>
     </div>
 
-    <div class="section-title">Professional Expertise</div>
+    <div class="section-title">Core Proficiencies</div>
+    <div class="skills-grid">
+        <div class="skill-tag">Paid Search (PPC)</div>
+        <div class="skill-tag">Demand Generation</div>
+        <div class="skill-tag">Account-Based Marketing</div>
+        <div class="skill-tag">Google Analytics (GA4)</div>
+        <div class="skill-tag">Multi-Channel Strategy</div>
+        <div class="skill-tag">Pipeline Optimization</div>
+    </div>
+
+    <div class="section-title">Professional Experience</div>
     
     <div class="timeline">
         <div class="experience-card">
@@ -289,8 +355,8 @@
                 <span class="duration">Present</span>
             </div>
             <ul class="exp-details">
-                <li>Design custom Google Ads and Meta Ads structures to isolate conversion paths and maximize account scaling efficiencies.</li>
-                <li>Deploy localized data integration scripts to monitor client budget caps, surface account discrepancies, and streamline weekly stats auditing.</li>
+                <li>Design and optimize high-leverage Google Ads and Meta Ads campaign architectures to isolate conversion paths and maximize ROI.</li>
+                <li>Conduct comprehensive multi-channel performance audits and build localized data reporting configurations for dedicated client accounts.</li>
             </ul>
         </div>
 
@@ -300,11 +366,11 @@
                     <h3 class="role">Growth Marketer / Performance Marketing</h3>
                     <p class="company">Shopify</p>
                 </div>
-                <span class="duration">Present</span>
+                <span class="duration">Past</span>
             </div>
             <ul class="exp-details">
-                <li>Strategized global paid search initiatives, driving merchant acquisition pipelines through deep search query analysis.</li>
-                <li>Collaborated across technical channels to refine tracking attribution frameworks and manage large-scale deployment budgets.</li>
+                <li>Strategized global paid search initiatives focused on accelerating international merchant acquisition pipelines.</li>
+                <li>Collaborated across technical teams to deploy advanced attribution layers and manage complex scaling budgets.</li>
             </ul>
         </div>
 
@@ -317,7 +383,20 @@
                 <span class="duration">Past</span>
             </div>
             <ul class="exp-details">
-                <li>Oversaw full-funnel digital client acquisition strategy, optimizing ad spend return across multi-channel lead generation platforms.</li>
+                <li>Led full-funnel digital demand generation and multi-channel acquisition paths across SaaS client portfolios.</li>
+            </ul>
+        </div>
+
+        <div class="experience-card">
+            <div class="exp-header">
+                <div>
+                    <h3 class="role">Senior Marketing Specialist - Demand Generation</h3>
+                    <p class="company">SambaSafety</p>
+                </div>
+                <span class="duration">Past</span>
+            </div>
+            <ul class="exp-details">
+                <li>Engineered data-driven demand generation structures and strategic Account-Based Marketing (ABM) campaigns to scale high-tier pipeline growth.</li>
             </ul>
         </div>
 
@@ -330,7 +409,7 @@
                 <span class="duration">Past</span>
             </div>
             <ul class="exp-details">
-                <li>Managed premium digital advertising client portfolios, designing high-converting keyword structures and implementing split-testing schemas.</li>
+                <li>Managed elite-tier digital advertising portfolios, standardizing account structures and testing ad copy variants to capture premium traffic.</li>
             </ul>
         </div>
 
@@ -343,7 +422,7 @@
                 <span class="duration">Past</span>
             </div>
             <ul class="exp-details">
-                <li>Built, monitored, and scaled core paid search environments while performing granular technical budget mapping configurations.</li>
+                <li>Monitored, executed, and structured technical search strategies while maintaining granular pacing and budget controls.</li>
             </ul>
         </div>
     </div>
